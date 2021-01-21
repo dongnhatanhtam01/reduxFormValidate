@@ -1,17 +1,21 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { connect } from "react-redux";
 
+
+//asdsad 
 class FormSinhVien extends Component {
-  state = {
+   state = {
     maSV: "",
     hoTen: "",
     soDienThoai: "",
     email: "",
   };
+  // [hoTen, setHoTen] = useState("");
   submitHandler = (e) => {
     e.preventDefault();
     this.props.themSinhVien(this.state);
   };
+  // onChange event catch
   onChangeHandler = (e) => {
     let tagInput = e.target;
     let { name, value } = tagInput;
@@ -26,7 +30,7 @@ class FormSinhVien extends Component {
   };
   render() {
     return (
-      <div className="container text-start">
+      <div className="container col-6 text-start">
         <div className="card  text-white bg-dark">
           <div className="card-header text-left">Thông tin sinh viên</div>
           <div className="card-body">
@@ -48,7 +52,7 @@ class FormSinhVien extends Component {
                     className="form-control"
                     name="hoTen"
                     value={this.state.hoTen}
-                    placeholder={this.state.maSV}
+                    placeholder={this.state.hoTen}
                     onChange={this.onChangeHandler}
                   />
                 </div>
@@ -60,7 +64,7 @@ class FormSinhVien extends Component {
                     className="form-control"
                     name="soDienThoai"
                     value={this.state.soDienThoai}
-                    placeholder={this.state.maSV}
+                    placeholder={this.state.soDienThoai}
                     onChange={this.onChangeHandler}
                   />
                 </div>
@@ -70,7 +74,7 @@ class FormSinhVien extends Component {
                     className="form-control"
                     name="email"
                     value={this.state.email}
-                    placeholder={this.state.maSV}
+                    placeholder={this.state.email}
                     onChange={this.onChangeHandler}
                   />
                 </div>

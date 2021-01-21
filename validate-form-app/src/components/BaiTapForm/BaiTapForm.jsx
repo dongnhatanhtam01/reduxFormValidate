@@ -7,8 +7,10 @@ export default class BaiTapForm extends Component {
         return (
             <div className="container">
                 <h3>Bài Tập Form Sinh Viên</h3>
-                <FormSinhVien></FormSinhVien>
-                <TableSinhVien />
+                <div className="row mt-5">
+                    <FormSinhVien></FormSinhVien>
+                    <TableSinhVien />
+                </div>
             </div>
         )
     }
