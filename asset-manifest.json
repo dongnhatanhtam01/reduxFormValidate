@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "./static/css/main.a7d59a9a.chunk.css",
-    "main.js": "./static/js/main.75ef9c6f.chunk.js",
-    "main.js.map": "./static/js/main.75ef9c6f.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.5cfbba3b.js",
-    "runtime-main.js.map": "./static/js/runtime-main.5cfbba3b.js.map",
-    "static/js/2.81f18b7c.chunk.js": "./static/js/2.81f18b7c.chunk.js",
-    "static/js/2.81f18b7c.chunk.js.map": "./static/js/2.81f18b7c.chunk.js.map",
-    "static/js/3.15c5f974.chunk.js": "./static/js/3.15c5f974.chunk.js",
-    "static/js/3.15c5f974.chunk.js.map": "./static/js/3.15c5f974.chunk.js.map",
-    "index.html": "./index.html",
-    "static/css/main.a7d59a9a.chunk.css.map": "./static/css/main.a7d59a9a.chunk.css.map",
-    "static/js/2.81f18b7c.chunk.js.LICENSE.txt": "./static/js/2.81f18b7c.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "./static/media/logo.6ce24c58.svg"
+    "main.css": "/reduxFormValidate/static/css/main.a7d59a9a.chunk.css",
+    "main.js": "/reduxFormValidate/static/js/main.75ef9c6f.chunk.js",
+    "main.js.map": "/reduxFormValidate/static/js/main.75ef9c6f.chunk.js.map",
+    "runtime-main.js": "/reduxFormValidate/static/js/runtime-main.427e0eb8.js",
+    "runtime-main.js.map": "/reduxFormValidate/static/js/runtime-main.427e0eb8.js.map",
+    "static/js/2.81f18b7c.chunk.js": "/reduxFormValidate/static/js/2.81f18b7c.chunk.js",
+    "static/js/2.81f18b7c.chunk.js.map": "/reduxFormValidate/static/js/2.81f18b7c.chunk.js.map",
+    "static/js/3.15c5f974.chunk.js": "/reduxFormValidate/static/js/3.15c5f974.chunk.js",
+    "static/js/3.15c5f974.chunk.js.map": "/reduxFormValidate/static/js/3.15c5f974.chunk.js.map",
+    "index.html": "/reduxFormValidate/index.html",
+    "static/css/main.a7d59a9a.chunk.css.map": "/reduxFormValidate/static/css/main.a7d59a9a.chunk.css.map",
+    "static/js/2.81f18b7c.chunk.js.LICENSE.txt": "/reduxFormValidate/static/js/2.81f18b7c.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/reduxFormValidate/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5cfbba3b.js",
+    "static/js/runtime-main.427e0eb8.js",
     "static/js/2.81f18b7c.chunk.js",
     "static/css/main.a7d59a9a.chunk.css",
     "static/js/main.75ef9c6f.chunk.js"
