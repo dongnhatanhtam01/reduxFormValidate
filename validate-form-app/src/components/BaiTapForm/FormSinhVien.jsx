@@ -28,6 +28,12 @@ class FormSinhVien extends Component {
     valid: false
   };
 
+  static getDerivedStateFromProps(props, state) {
+    if (props.mangSinhVien.hoTen !== state.values.hoTen) {
+      return { ...state, values: props.mangSinhVien }
+    }
+    return state
+  }
   // sau khi cap nhat gia tri moi tien hanh quet
   checkValid = () => {
     let valid = true // lần đầu tiên khi người dùng nhập bất kỳ => setState => trong đó chạy checkValid cho valid = true
@@ -50,7 +56,7 @@ class FormSinhVien extends Component {
     // duyệt đối tượng obj thì dùng for in
     // dùng for of khi duyệt mảng
     for (var key in this.state.errors) {
-      if (this.state.errors[key] !== "" || this.state.values[key] ==="") {
+      if (this.state.errors[key] !== "" || this.state.values[key] === "") {
         valid = false
       }
     }
@@ -75,16 +81,23 @@ class FormSinhVien extends Component {
     let tagInput = e.target;
     let { name, value, type, pattern } = tagInput;
 
-    // ôn tập kiến thức ở ES6
-    let errorMessage = ''; // mac dinh khong co loi
+    // config messages for errors
+    let errorMessage = '';
 
-    // kiểm tra rỗng
+    // field rỗng hiện thông báo erros
     if (value.trim() === "") {
-      errorMessage = name + "không được để rỗng..."
+      errorMessage = name + " không được để rỗng..."
       console.log(errorMessage);
+      pattern = "^([1-9]|[12]\d|3[0-6])$"
     }
 
-    // Kiểm tra email
+    if (name === 'maSV') {
+      let regex = new RegExp(pattern)
+      if (!regex.test(value)) {
+        errorMessage = name + ' không hợp lệ...'
+      }
+    }
+    // email không đúng pattern; hiện errors emails
     if (name === 'email') {
       const regex = new RegExp(pattern) // string to regex obj
       if (!regex.test(value)) {
@@ -97,7 +110,6 @@ class FormSinhVien extends Component {
         errorMessage = name + ' không hợp lệ...'
       }
     }
-
 
     let values = { ...this.state.values, [name]: value }
     let errors = { ...this.state.errors, [name]: errorMessage }
@@ -123,7 +135,7 @@ class FormSinhVien extends Component {
   };
   render() {
     return (
-      <div className="container col-6 text-start">
+      <div className="container col-4  text-start">
         <div className="card  text-white bg-dark">
           <div className="card-header text-left">Thông tin sinh viên</div>
           <div className="card-body">
@@ -131,8 +143,9 @@ class FormSinhVien extends Component {
               <div className="row">
                 <div className="form-group col-6">
                   <span>Mã Sinh Viên</span>
-                  {/* form-student-code  */}
+                  {/* form-student-code  - validated 0 -> 36*/}
                   <input
+                    pattern="^([1-9]|[12]\d|3[0-6])$"
                     className="form-control"
                     name="maSV"
                     value={this.state.values.maSV}
@@ -194,7 +207,7 @@ class FormSinhVien extends Component {
               </div>
               <div className="row">
                 <div className="col-md-12 text-end mt-4">
-                  {this.state.valid?<button className=" btn btn-success"  >Thêm đối tượng</button>:<button className=" btn btn-success" disabled >Thêm đối tượng</button>}
+                  {this.state.valid ? <button className=" btn btn-success"  >Thêm đối tượng</button> : <button className=" btn btn-success" disabled >Thêm đối tượng</button>}
                 </div>
               </div>
             </form>
@@ -202,6 +215,11 @@ class FormSinhVien extends Component {
         </div>
       </div>
     );
+  }
+}
+const mapStateToProps = (state) => {
+  return {
+    mangSinhVien: state.QuanLySinhVienReducer.mangSinhVien || {}
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -215,4 +233,4 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
-export default connect(null, mapDispatchToProps)(FormSinhVien);
+export default connect(mapStateToProps, mapDispatchToProps)(FormSinhVien);

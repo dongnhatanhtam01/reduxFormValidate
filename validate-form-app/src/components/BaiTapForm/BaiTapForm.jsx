@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ModalSinhVien from "./ModalSinhVien"
 import FormSinhVien from './FormSinhVien'
 import TableSinhVien from './TableSinhVien'
 
@@ -10,6 +11,8 @@ export default class BaiTapForm extends Component {
                 <div className="row mt-5">
                     <FormSinhVien></FormSinhVien>
                     <TableSinhVien />
+
+
                 </div>
             </div>
         )
